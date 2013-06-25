@@ -1,0 +1,18 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:plone="http://namespaces.plone.org/plone">
+
+  <five:registerPackage package="." />
+  <include package="z3c.jbot" file="meta.zcml" />
+    
+  <!-- Start cleaning up superfluous structures and add warrented classes.
+       This should at some point be moved to the respective packages, but 
+       to start off it makes more sense to do it here. Because all the
+       changes tie together. -->
+  <browser:jbot directory="templates" />
+
+  <!-- New plone theme based on Oriol's design (psd's in docs/design) -->
+  <plone:static directory="theme" name="coolblue" type="theme"/>
+
+</configure>
