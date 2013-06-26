@@ -23,8 +23,7 @@ setup(name='diazotheme.plone',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'diazoframework.plone',
-          'diazoframework.purecss',
+          'z3c.jbot',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]

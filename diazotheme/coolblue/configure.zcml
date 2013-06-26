@@ -3,7 +3,9 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:plone="http://namespaces.plone.org/plone">
 
-  <five:registerPackage package="." />
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package=".browser" />
   <include package="z3c.jbot" file="meta.zcml" />
     
   <!-- Start cleaning up superfluous structures and add warrented classes.
