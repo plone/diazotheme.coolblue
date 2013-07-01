@@ -66,8 +66,6 @@
         <div tal:replace="structure provider:plone.portaltop" tal:condition="not:ajax_load" />
       </div>
 
-      <div class="visualClear" id="clear-space-before-columns"><!-- --></div>
-
       <div id="portal-columns">
 
         <tal:comment replace="nothing"> Start of main content block </tal:comment>
@@ -176,15 +174,10 @@
       </div>
       <tal:comment replace="nothing"> end column wrapper </tal:comment>
 
-      <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
-
       <metal:block i18n:domain="plone" tal:condition="not:ajax_load">
-
         <div tal:replace="structure provider:plone.portalfooter" />
-
       </metal:block>
 
-      <div class="visualClear"><!-- --></div>
     </div>
 </body>
 </html>

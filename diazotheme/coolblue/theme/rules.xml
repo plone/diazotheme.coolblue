@@ -5,12 +5,14 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+  <!-- Theme
+       ================================================================== -->
   <notheme if-content="not(/html/body/div[@id='visual-portal-wrapper'])"/>     
   <theme href="/++theme++coolblue/index.html"/>
 
+
   <!-- Head rules
        ================================================================== -->
-
   <!-- Attributes -->
   <copy attributes="*" theme="/html" content="/html"/>
 
@@ -24,28 +26,301 @@
   <after theme="/html/head/title" 
          content="/html/head/meta[@name='description' or @name='keywords' or starts-with(@name, 'DC.')]" />
 
-
+  <!-- Script -->
   <after theme-children="/html/head" content="/html/head/script" />
+
 
   <!-- Body rules
        ================================================================== -->
-  <xi:include href="/++framework++purecss/rules/body/responsive.xml"/>
-  <xi:include href="/++framework++purecss/rules/body/columns.xml"/>
-  <xi:include href="/++framework++purecss/rules/body/forms.xml"/>
-  <xi:include href="/++framework++purecss/rules/body/tables.xml"/>
-  <xi:include href="/++framework++purecss/rules/body/menu.xml"/>
+  <!--
+  <replace content="//div[@class='row']">
+      <div class="pure-g-r">
+          <xsl:copy-of select="./@id"/>
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+  -->
 
-  <xi:include href="/++framework++purecss/rules/body/edit.xml"/>
-  <xi:include href="/++framework++plone/rules/utility/toolbar.xml"/>
-  <xi:include href="/++framework++purecss/rules/body/base.xml"/>
+  <!--
+  <replace content="//div[contains(@class, 'cell ')]">
+      <div>
+          <xsl:choose>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-1:2 ')">
+                  <xsl:attribute name="class">pure-u-1-2</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-1:3 ')">
+                  <xsl:attribute name="class">pure-u-1-3</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-2:3 ')">
+                  <xsl:attribute name="class">pure-u-2-3</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-1:4 ')">
+                  <xsl:attribute name="class">pure-u-1-4</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-2:4 ')">
+                  <xsl:attribute name="class">pure-u-2-4</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-3:4 ')">
+                  <xsl:attribute name="class">pure-u-3-4</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-1:5 ')">
+                  <xsl:attribute name="class">pure-u-1-5</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-2:5 ')">
+                  <xsl:attribute name="class">pure-u-2-5</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-3:5 ')">
+                  <xsl:attribute name="class">pure-u-3-5</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-4:5 ')">
+                  <xsl:attribute name="class">pure-u-4-5</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-1:6 ')">
+                  <xsl:attribute name="class">pure-u-1-6</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-2:6 ')">
+                  <xsl:attribute name="class">pure-u-2-6</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-3:6 ')">
+                  <xsl:attribute name="class">pure-u-3-6</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-4:6 ')">
+                  <xsl:attribute name="class">pure-u-4-6</xsl:attribute>
+              </xsl:when>
+              <xsl:when test="contains(concat(' ', normalize-space(@class), ' '), ' width-5:6 ')">
+                  <xsl:attribute name="class">pure-u-4-6</xsl:attribute>
+              </xsl:when>
+              <xsl:otherwise>
+                  <xsl:attribute name="class">pure-u-1</xsl:attribute>
+              </xsl:otherwise>
+          </xsl:choose>
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+  -->
 
-  <!-- Place the content 
-       .................................................................. -->
+  <!-- Forms -->
+  <replace content="//form">
+      <form>
+          <xsl:copy-of select="@*[local-name() != 'class']"/>
+          <xsl:attribute name="class">pure-form pure-form-stacked</xsl:attribute>
+          <xsl:apply-templates select="./*"/>
+      </form>
+  </replace>
+
+  <replace content="//form[@id='searchGadget_form']">
+      <form>
+          <xsl:copy-of select="@*[local-name() != 'class']"/>
+          <xsl:attribute name="class">pure-form pure-form-search</xsl:attribute>
+          <div class="LSBox">
+              <xsl:apply-templates select="./div/*[not(@type='submit') and not(@class='LSResult')]"/>
+              <xsl:apply-templates select="./div/*[@type='submit']"/>
+              <xsl:apply-templates select="./div/*[@class='LSResult']"/>
+          </div>
+      </form>
+  </replace>
+
+  <replace content="//form[contains(@class, 'searchPage')]">
+      <form>
+          <xsl:copy-of select="@*[local-name() != 'class']"/>
+          <xsl:attribute name="class">pure-form pure-form-search searchPage</xsl:attribute>
+          <xsl:apply-templates select="./*"/>
+      </form>
+  </replace>
+
+  <replace content="//*[@id='search-filter']">
+      <div>
+          <xsl:copy-of select="@*[local-name() != 'class']"/>
+          <xsl:attribute name="class">pure-g</xsl:attribute>
+          <div class="pure-u-1-2">
+              <xsl:apply-templates select="./fieldset[1]"/>
+          </div>
+          <div class="pure-u-1-2">
+              <xsl:apply-templates select="./fieldset[2]"/>
+          </div>
+      </div>
+  </replace>
+
+  <replace css:content=".field">
+    <xsl:choose>
+        <xsl:when test="./input[@type='checkbox']|./input[@type='radio']">
+            <div class="field pure-control-group">
+                <xsl:apply-templates select="./*[not(@type='radio' or @type='checkbox' or (local-name() = 'label' and preceding-sibling::input[@type='radio' or @type='checkbox']))]"/>
+                <xsl:for-each select="./input[@type='checkbox']">
+                    <xsl:variable name="label" select="./following-sibling::label"/>
+                    <label for="option-one" class="pure-checkbox">
+                        <xsl:copy-of select="$label/@for"/>
+                        <input>
+                            <xsl:apply-templates select="./@*"/>
+                        </input>
+                        <xsl:value-of select="$label/text()"/>
+                    </label>
+                </xsl:for-each>
+                <xsl:for-each select="./input[@type='radio']">
+                    <xsl:variable name="label" select="./following-sibling::label"/>
+                    <label for="option-one" class="pure-radio">
+                        <xsl:copy-of select="$label/@for"/>
+                        <input>
+                            <xsl:apply-templates select="./@*"/>
+                        </input>
+                        <xsl:value-of select="$label/text()"/>
+                    </label>
+                </xsl:for-each>
+            </div>            
+        </xsl:when>
+        <xsl:otherwise>
+            <div class="field pure-control-group">
+              <xsl:apply-templates select="./*"/>
+            </div>
+        </xsl:otherwise>
+    </xsl:choose>
+  </replace>
+
+  <replace css:content=".formHelp">
+    <small class="formHelp">
+      <xsl:apply-templates select="./text()"/>
+    </small>
+  </replace>
+
+  <replace content="//*[@id='search-filter']//label">
+      <label>
+          <xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
+          <xsl:value-of select="."/>
+          <xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
+      </label><br />
+  </replace>
+
+  <replace content="//input[@type='submit']|//input[@type='reset']">
+      <button>
+          <xsl:copy-of select="@*[local-name() != 'class' and local-name() != 'value' and local-name() != 'type']"/>
+          <xsl:attribute name="class"><xsl:value-of select="@class"/> pure-button</xsl:attribute>
+          <xsl:value-of select="./@value"/>
+      </button>
+  </replace>
+
+  <replace css:content="input.searchButton">
+      <button>
+          <xsl:copy-of select="@*[local-name() != 'class' and local-name() != 'value' and local-name() != 'type']"/>
+          <xsl:attribute name="class"><xsl:value-of select="@class"/> pure-button pure-button-primary</xsl:attribute>
+          <xsl:value-of select="./@value"/>
+      </button>
+  </replace>
+
+  <replace css:content="#search-filter input.searchButton"/>
+
+  <strip css:content=".searchSection"/>
+  <strip css:content=".formControls"/>
+  <strip css:content="#search-filter div, #search-filter span, #search-filter br"/>
+
+  <!-- Tables -->
+  <replace css:content="table">
+    <table class="pure-table pure-table-bordered">
+      <xsl:copy-of select="@*[local-name() != 'class']"/>
+      <xsl:apply-templates select="./*"/>
+    </table>
+  </replace>
+
+  <replace css:content="table.plain">
+    <table class="pure-table pure-table-horizontal">
+      <xsl:copy-of select="@*[local-name() != 'class']"/>
+      <xsl:apply-templates select="./*"/>
+    </table>
+  </replace>
+
+  <replace css:content="table.listing">
+    <table class="pure-table">
+      <xsl:copy-of select="@*[local-name() != 'class']"/>
+      <xsl:apply-templates select="./*"/>
+    </table>
+  </replace>
+
+  <replace css:content="table.listing tr:nth-child(2n+1), tr.odd">
+    <tr class="pure-table-odd">
+      <xsl:apply-templates select="./*"/>
+    </tr>
+  </replace>
+
+  <!-- Menus -->
+  <replace css:content="#portal-globalnav, #content-views">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+        <xsl:copy-of select="@*"/>
+        <xsl:apply-templates select="./*"/>
+      </ul>
+    </div>
+  </replace>
+
+  <replace css:content="#portal-globalnav .selected, #content-views .selected">
+    <li class="pure-menu-selected">
+      <xsl:copy-of select="@id"/>
+      <xsl:apply-templates select="./*"/>
+    </li>
+  </replace>
+
+  <replace css:content="#portal-personaltools">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+        <xsl:copy-of select="@*"/>
+        <xsl:apply-templates select="./*"/>
+      </ul>
+    </div>
+  </replace>
+
+  <replace css:content="#portal-siteactions">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul id="portal-siteactions">
+        <xsl:apply-templates select=".//li"/>
+      </ul>
+    </div>
+  </replace>
+
+  <replace css:content="#portal-colophon">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul id="portal-colophon">
+        <xsl:apply-templates select=".//li"/>
+      </ul>
+    </div>
+  </replace>
+
+  <!-- Edit -->
+  <!-- Might not be needed later on. -->
+  <replace css:content=".row > a.managePortletsFallback">
+    <div class="pure-u-1">
+      <a class="managePortletsFallback pure-button">
+          <xsl:copy-of select="./@href|./*|./text()"/>
+      </a>
+    </div>
+  </replace>
+
+  <!-- Toolbar -->
+  <rules if-content="//*[@id='edit-bar']">
+    <append theme="/html/head">
+      <link rel="stylesheet" type="text/css"
+            href="/++resource++plone.app.toolbar_init.css"/>
+      <script type="text/javascript"
+              src="/++resource++plone.app.toolbar_init.js"></script>
+    </append>
+    <append theme="/html/body" method="raw"
+            content="//div[@data-iframe='plone-toolbar']" />
+  </rules>
+
+  <rules if-content="not(//*[@id='edit-bar'])">
+    <drop content="//div[@data-iframe='plone-toolbar']"/>
+    <drop content="/html/head/link[contains(@href, 'plone.app.toolbar')]"/>
+    <drop content="/html/head/script[contains(@src, 'plone.app.toolbar')]"/>
+  </rules>
+
+  <!-- Place the content
+       ================================================================== -->
   <merge attributes="class" theme="/html/body" content="/html/body"/>
-  <copy css:theme=".header>div" css:content="#portal-top"/>
-  <copy css:theme=".nav>div" css:content="#portal-breadcrumbs" method="raw"/>
+  <copy css:theme=".header > div"
+        css:content="#portal-top"/>
+  <copy css:theme=".nav .breadcrumbs"
+        css:content="#portal-breadcrumbs>*"/>
   <drop css:content="#portal-breadcrumbs"/>
-  <copy css:theme=".main>div" css:content="#portal-columns"/>
-  <copy css:theme=".footer>div" css:content="#portal-footer-wrapper>*"/>
+  <copy css:theme=".main > div"
+        css:content="#portal-columns"/>
+  <copy css:theme=".footer > div"
+        css:content="#visual-portal-wrapper > *:not(#portal-top):not(#portal-columns)"/>
 
 </rules>
