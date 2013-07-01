@@ -1,0 +1,4 @@
+<div id="portal-header" 
+     class="header">
+    <div tal:replace="structure provider:plone.portalheader" />
+</div>
