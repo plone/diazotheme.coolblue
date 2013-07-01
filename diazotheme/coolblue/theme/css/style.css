@@ -1,0 +1,50 @@
+/* =Layout */
+body {
+  color: #45494d;
+}
+
+.nav {
+  -moz-box-shadow: 0 10px 10px -10px #888888 inset;
+  -webkit-box-shadow: 0 10px 10px -10px #888888 inset;
+  -o-box-shadow: 0 10px 10px -10px #888888 inset;
+  box-shadow: 0 10px 10px -10px #888888 inset;
+  background: #f7f5f2;
+  padding: 10px 0;
+}
+
+.footer {
+  background: #2e3133;
+  color: #777e83;
+  padding: 50px 0;
+}
+.footer .pure-menu {
+  background: transparent;
+}
+.footer .pure-menu a {
+  color: #eeeeee;
+}
+.footer .pure-menu a:hover {
+  color: white;
+}
+
+.block {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/* =Typography */
+body {
+  line-height: 1.618;
+}
+
+/* =Plone */
+.hiddenStructure {
+  background: transparent;
+  border: none;
+  display: block;
+  height: 0.1em;
+  margin: -0.1em 0 0 -0.1em;
+  overflow: hidden;
+  padding: 0;
+  width: 0.1em;
+}
