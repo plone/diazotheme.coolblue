@@ -1,4 +1,4 @@
-<ul id="portal-siteactions" class="siteactions"
+<ul id="portal-siteactions" class="portal portalSiteactions siteactions"
     tal:define="accesskeys python: {'sitemap' : '3', 'accessibility' : '0', 'contact' : '9'};"
     tal:condition="view/site_actions"
     i18n:domain="plone">

@@ -1,9 +1,9 @@
-<div id="portal-personaltools-wrapper" class="personaltools-wrapper"
+<div id="portal-personaltools-wrapper" class="portal portalPersonaltoolsWrapper personaltools-wrapper"
      i18n:domain="plone">
   
   <p class="hiddenStructure" i18n:translate="heading_personal_tools">Personal tools</p>
   
-  <dl class="actionMenu deactivated personaltools" id="portal-personaltools"
+  <dl class="actionMenu deactivated portal portalPersonaltools personaltools" id="portal-personaltools"
       tal:condition="python:view.user_actions and not view.anonymous">
     <tal:block condition="not: view/anonymous">
     <dt class="actionMenuHeader">
@@ -30,7 +30,7 @@
     </tal:block>
   </dl>
   
-  <ul class="actionMenu deactivated personaltools" id="portal-personaltools"
+  <ul class="actionMenu deactivated portal portalPersonaltools personaltools" id="portal-personaltools"
       tal:condition="python:view.user_actions and view.anonymous">
     <li id="anon-personalbar">
       <tal:actions repeat="action view/user_actions">

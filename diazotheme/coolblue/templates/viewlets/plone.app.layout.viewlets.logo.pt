@@ -1,5 +1,5 @@
 <a id="portal-logo"
-   class="logo"
+   class="portal portalLogo logo"
    title="Home"
    accesskey="1"
    tal:attributes="href view/navigation_root_url;

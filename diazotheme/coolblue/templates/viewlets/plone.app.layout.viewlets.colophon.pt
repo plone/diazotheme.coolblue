@@ -1,4 +1,4 @@
-<div id="portal-colophon" class="colophon" i18n:domain="plone">
+<div id="portal-colophon" class="portal portalColophon" i18n:domain="plone">
   <ul>
     <li>
       <a href="http://plone.org"

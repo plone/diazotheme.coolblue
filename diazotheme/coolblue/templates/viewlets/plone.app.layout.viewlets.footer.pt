@@ -1,4 +1,4 @@
-<div i18n:domain="plone" id="portal-footer" class="copyright">
+<div i18n:domain="plone" id="portal-footer" class="copyright portal portalFooter">
   <p>
      <span i18n:translate="description_copyright" tal:omit-tag="">
      The

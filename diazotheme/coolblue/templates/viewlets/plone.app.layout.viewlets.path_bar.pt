@@ -1,5 +1,5 @@
 <div id="portal-breadcrumbs" 
-     class="breadcrumbs"
+     class="portal portalBreadcrumbs breadcrumbs"
      i18n:domain="plone"
      tal:define="breadcrumbs view/breadcrumbs;
                  is_rtl view/is_rtl">
