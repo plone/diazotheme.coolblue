@@ -18,13 +18,5 @@
       file="utils.css"
       name="utils.css"
       />
-  <browser:resource
-      file="logo.jpg"
-      name="logo.jpg"
-      />
-  <browser:resource
-      file="logo.png"
-      name="logo.png"
-      />
 
 </configure>
