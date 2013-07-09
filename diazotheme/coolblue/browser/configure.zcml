@@ -19,10 +19,6 @@
       name="utils.css"
       />
   <browser:resource
-      file="layout.css"
-      name="layout.css"
-      />
-  <browser:resource
       file="logo.jpg"
       name="logo.jpg"
       />
