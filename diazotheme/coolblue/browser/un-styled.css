@@ -1,0 +1,31 @@
+.portal { 
+    margin: 1em 0; 
+}
+.portalWrapper {
+    margin: 0 1em; 
+}
+.portalColophon {
+    float: left; 
+}
+.portalSearchbox, .portalPersonaltoolsWrapper, .portalSiteactions  { 
+    float: right;
+    clear: right;
+}
+.portalColumns {
+    clear: right;
+}
+.LSResult, .actionMenuContent { 
+    background: #fff; 
+}
+.portalGlobalnav li, .portalSiteactions li, .portalColophon li  { 
+    display: inline; 
+    padding-left: 1em; 
+}
+.portalGlobalnav, .portalSiteactions, .portalColophon,
+.portalGlobalnav li:first-child, .portalSiteactions li:first-child,
+.portalColophon li:first-child {
+    padding-left: 0; 
+}
+.portalFooter {
+    text-align: center;
+}

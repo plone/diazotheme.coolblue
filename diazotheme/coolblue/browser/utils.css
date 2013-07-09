@@ -6,3 +6,24 @@
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
+
+/* Minimal functionality Live search and search filter */
+.LSBox, .actionMenu { 
+    position: relative; 
+}
+.LSResult, .actionMenuContent { 
+    position: absolute;
+    z-index: 1; 
+}
+.actionMenu {
+    padding: 0 1em;
+}
+.actionMenu, .actionMenuHeader {
+    display: inline-block;
+}
+.actionMenuContent {
+    margin-left: 0;
+}
+.deactivated .actionMenuContent {
+    display: none;
+}
