@@ -1,0 +1,1 @@
+This directory is used to override default plone viewlet templates.
