@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<object name="portal_css" meta_type="Stylesheets Registry">
+
+ <stylesheet
+     id="++resource++normalize-1.1.2.css"
+     insert-before="*"
+     enabled=""
+     cacheable="True"
+     compression="safe"
+     cookable="True"
+     expression="not:request/HTTP_X_THEME_ENABLED|nothing"
+     media="screen"
+     rel="stylesheet"
+     rendering="link"
+     />
+
+ <stylesheet
+     id="++resource++normalize-2.1.2.css"
+     insert-after="++resource++normalize-1.1.2.css"
+     enabled="on"
+     cacheable="True"
+     compression="safe"
+     cookable="True"
+     expression="not:request/HTTP_X_THEME_ENABLED|nothing"
+     media="screen"
+     rel="stylesheet"
+     rendering="link"
+     />
+
+
+ <stylesheet
+     id="++resource++un-styled.css"
+     insert-after="++resource++normalize-2.1.2.css"
+     enabled="on"
+     cacheable="True"
+     compression="safe"
+     cookable="True"
+     expression="not:request/HTTP_X_THEME_ENABLED|nothing"
+     media="screen"
+     rel="stylesheet"
+     rendering="link"
+     />
+
+ <stylesheet
+     id="++resource++utils.css"
+     insert-after="++resource++un-styled.css"
+     enabled="on"
+     cacheable="True"
+     compression="safe"
+     cookable="True"
+     expression=""
+     media="screen"
+     rel="stylesheet"
+     rendering="link"
+     />
+
+</object>

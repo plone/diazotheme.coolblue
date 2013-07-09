@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<object name="portal_skins" default_skin="Sunburst Theme">
+
+ <object name="un_styles"
+    meta_type="Filesystem Directory View"
+    directory="diazotheme.coolblue:skins/un_styles"/>
+
+ <skin-path name="Un-styled Theme" based-on="Plone Default">
+  <layer name="un_styles" insert-after="custom"/>
+ </skin-path>
+
+</object>

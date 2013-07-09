@@ -1,20 +1,52 @@
 <configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:cmf="http://namespaces.zope.org/cmf"
            xmlns:five="http://namespaces.zope.org/five"
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:plone="http://namespaces.plone.org/plone">
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <!-- Add minimal styling to the then wrongly named (un-styled) plone. -->
   <include package=".browser" />
-  <include package="z3c.jbot" file="meta.zcml" />
+
+  <!-- Diazo theme to test difference in (un-styled) plone and (un-styled) 
+       plone with diazo. Without Diazo should have minimal styling, with 
+       should only have minimal styles for:
+       - search, both search filtering and live search;
+       - hiddenStructure;
+       - TODO: Add missing...? 
+    -->
+  <plone:static directory="clean" name="clean" type="theme"/>
+
+  <!-- New plone theme based on Oriol's design (psd's in docs/design) -->
+  <plone:static directory="coolblue" name="coolblue" type="theme"/>
     
   <!-- Start cleaning up superfluous structures and add warrented classes.
        This should at some point be moved to the respective packages, but 
        to start off it makes more sense to do it here. Because all the
        changes tie together. -->
-  <browser:jbot directory="templates" />
+  <include package="z3c.jbot" file="meta.zcml" />
+  <!-- Browser view templates (non-viewlet) -->
+  <browser:jbot directory="templates/browser" />
+  <!-- Portlet templates, generally in portlet directory in products -->
+  <browser:jbot directory="templates/portlets" />
+  <!-- Old style skin templates -->
+  <browser:jbot directory="templates/skins" />
+  <!-- Viewlet templates, separated for the big number of viewlet templates -->
+  <browser:jbot directory="templates/viewlets" />
 
-  <!-- New plone theme based on Oriol's design (psd's in docs/design) -->
-  <plone:static directory="theme" name="coolblue" type="theme"/>
+  <genericsetup:registerProfile
+      name="default"
+      title="Un-styled Theme"
+      directory="profiles/default"
+      description="Un-styled Theme is a temorary way to include stylesheets and 
+                   override base_properties.props. The default font name in 
+                   the logo portlet should at least be changed to the 2008
+                   logo, e.g. 'logo.png' which should also be present in 
+                   Products.CMFPlone, not just in sunburst."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <cmf:registerDirectory name="un_styles"/>
 
 </configure>
