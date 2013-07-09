@@ -37,12 +37,24 @@ body {
   line-height: 1.618;
 }
 
+/* =Colors */
 a {
   color: #0099ff;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
+}
+
+.header a {
+  color: #0099ff;
+}
+
+.footer {
+  color: #777e83;
+}
+.footer a {
+  color: #f7f2f2;
 }
 
 /* =Plone */
