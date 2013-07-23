@@ -2,21 +2,9 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:five="http://namespaces.zope.org/five">
 
-  <browser:resource
-      file="normalize-1.1.2.css"
-      name="normalize-1.1.2.css"
-      />
-  <browser:resource
-      file="normalize-2.1.2.css"
-      name="normalize-2.1.2.css"
-      />
-  <browser:resource
-      file="un-styled.css"
-      name="un-styled.css"
-      />
-  <browser:resource
-      file="utils.css"
-      name="utils.css"
-      />
+  <browser:resource file="normalize-1.1.2.css" name="normalize-1.1.2.css"/>
+  <browser:resource file="normalize-2.1.2.css" name="normalize-2.1.2.css"/>
+  <browser:resource file="un-styled.css" name="un-styled.css"/>
+  <browser:resource file="utils.css" name="utils.css"/>
 
 </configure>
