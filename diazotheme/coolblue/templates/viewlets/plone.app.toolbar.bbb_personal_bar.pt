@@ -3,7 +3,7 @@
 
 <h5 class="hiddenStructure" i18n:translate="heading_personal_tools">Personal tools</h5>
 
-<ul class="actionMenu deactivated" id="portal-personaltools" class="portal portalPersonaltools personaltools">
+<ul class="actionMenu deactivated portal portalPersonaltools personaltools" id="portal-personaltools">
   <li id="anon-personalbar">
     <tal:actions repeat="action view/user_actions">
         <a href=""
