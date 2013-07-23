@@ -1,3 +1,4 @@
+/* =Layout */
 .portal { 
     margin: 1em 0; 
 }
@@ -14,18 +15,20 @@
 .portalColumns {
     clear: right;
 }
-.LSResult, .actionMenuContent { 
-    background: #fff; 
-}
-.portalGlobalnav li, .portalSiteactions li, .portalColophon li  { 
+.portalGlobalnav li, .portalPersonaltools li, .portalSiteactions li, .portalColophon li  { 
     display: inline; 
     padding-left: 1em; 
 }
-.portalGlobalnav, .portalSiteactions, .portalColophon,
-.portalGlobalnav li:first-child, .portalSiteactions li:first-child,
-.portalColophon li:first-child {
+.portalGlobalnav, .portalPersonaltools, .portalSiteactions, .portalColophon,
+.portalGlobalnav li:first-child, .portalPersonaltools li:first-child, 
+.portalSiteactions li:first-child, .portalColophon li:first-child {
     padding-left: 0; 
 }
 .portalFooter {
     text-align: center;
+}
+
+/* =Color */
+.LSResult, .actionMenuContent { 
+    background: #fff; 
 }
