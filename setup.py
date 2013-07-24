@@ -6,8 +6,8 @@ version = '0.1'
 setup(name='diazotheme.coolblue',
       version=version,
       description="",
-      long_description=open("README.md").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+                       open(os.path.join("docs", "CHANGES.rst")).read(),
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
