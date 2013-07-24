@@ -14,7 +14,7 @@
     </dt>
 
     <dd class="portletItem lastItem">
-        <ul class="navTree navTreeLevel0" role="navigation" aria-labelledby="Local Navigation">
+        <ul class="navTree navTreeLevel0" role="navigation" aria-label="Secondary Navigation">
             <li tal:define="selectedClass view/root_item_class;
                             li_class python:selectedClass and ' navTreeCurrentNode' or '';
                             normalizeString nocall:context/plone_utils/normalizeString;
