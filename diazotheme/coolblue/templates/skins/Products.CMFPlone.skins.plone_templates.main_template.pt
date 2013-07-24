@@ -63,7 +63,7 @@
                         dir python: isRTL and 'rtl' or 'ltr'">
     <div id="visual-portal-wrapper"  class="visualPortalWrapper portalWrapper wrapper">
 
-      <div id="portal-top" class="portal portalTop top" i18n:domain="plone">
+      <div id="portal-top" class="portal portalTop top" role="banner" i18n:domain="plone">
         <div tal:replace="structure provider:plone.portaltop" tal:condition="not:ajax_load" />
       </div>
 
@@ -72,7 +72,7 @@
            tal:attributes="class string:portal portalColumns ${noc} columns">
 
         <tal:comment replace="nothing"> Start of main content block </tal:comment>
-        <div id="portal-column-content" class="portal portalColumnContent column content">
+        <div id="portal-column-content" class="portal portalColumnContent column content" role="main">
 
           <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
 
@@ -147,7 +147,7 @@
           
         <tal:notajax tal:condition="not:ajax_load">
             <tal:comment replace="nothing"> Start of the first portlet column </tal:comment>
-            <div id="portal-column-one" class="portal portalColumnOne column one"
+            <div id="portal-column-one" class="portal portalColumnOne column one" role="complementary"
                  metal:define-slot="column_one_slot"
                  tal:condition="sl">
               <div class="visualPadding">
@@ -162,7 +162,7 @@
 
         <tal:notajax tal:condition="not:ajax_load">
             <tal:comment replace="nothing"> Start of the second portlet column </tal:comment>
-            <div id="portal-column-two" class="portal portalColumnTwo column two"
+            <div id="portal-column-two" class="portal portalColumnTwo column two" role="complementary"
                  metal:define-slot="column_two_slot"
                  tal:condition="sr">
               <div class="visualPadding">

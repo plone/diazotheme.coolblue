@@ -1,4 +1,5 @@
 <div id="portal-searchbox"
+     role="search"
      class="portal portalSearchbox searchbox"
      i18n:domain="plone"
      tal:define="navigation_root_url view/navigation_root_url;
