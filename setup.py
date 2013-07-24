@@ -3,7 +3,7 @@ import os
 
 version = '0.1'
 
-setup(name='diazotheme.plone',
+setup(name='diazotheme.coolblue',
       version=version,
       description="",
       long_description=open("README.md").read() + "\n" +
