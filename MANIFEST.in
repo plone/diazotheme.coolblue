@@ -1,7 +1,6 @@
-include *.md
-include *.py
+include *.rst
 
 recursive-include docs *
 recursive-include diazotheme *
 
-global-exclude *pyc
+global-exclude *.pyc
