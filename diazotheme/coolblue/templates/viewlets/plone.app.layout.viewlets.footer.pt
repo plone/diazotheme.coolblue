@@ -1,4 +1,4 @@
-<div i18n:domain="plone" id="portal-footer" class="copyright portal portalFooter footer" role="contentinfo">
+<footer i18n:domain="plone" id="portal-footer" class="copyright portal portalFooter footer" role="contentinfo">
   <p>
      <span i18n:translate="description_copyright" tal:omit-tag="">
      The
@@ -19,4 +19,4 @@
          <a href="http://creativecommons.org/licenses/GPL/2.0/" i18n:translate="label_gnu_gpl_licence">GNU GPL license</a></span>.
      </span>
   </p>
-</div>
+</footer>
