@@ -2,7 +2,8 @@
      tal:condition="portal_tabs"
      i18n:domain="plone">
 
-    <nav id="main-navigation" role="navigation" aria-label="Global Navigation">
+    <nav id="main-navigation" role="navigation" aria-label="Global Navigation"
+        i18n:attributes="aria-label">
      
     <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
 

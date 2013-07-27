@@ -14,7 +14,8 @@
     </dt>
 
     <dd class="portletItem lastItem">
-        <nav role="navigation" aria-label="Secondary Navigation">
+        <nav role="navigation" aria-label="Secondary Navigation"
+            i18n:attributes="aria-label">
           <ul class="navTree navTreeLevel0">
               <li tal:define="selectedClass view/root_item_class;
                               li_class python:selectedClass and ' navTreeCurrentNode' or '';
