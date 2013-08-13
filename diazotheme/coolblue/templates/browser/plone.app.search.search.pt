@@ -83,6 +83,7 @@
                 </span>
             </a>
         </p>
+
         <div id="search-results-wrapper"
              tal:define="b_start python:0;
                          b_start request/b_start | b_start;
@@ -370,6 +371,7 @@
                 </div>
             </metal:searchresults>
 
+        </div>
     </form>
 
   </div>
