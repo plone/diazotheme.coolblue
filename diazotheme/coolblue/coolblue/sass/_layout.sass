@@ -3,7 +3,46 @@
 body 
   color: #45494d
 
-.header 
+/* to header classes so will give the top a 2em padding
+.header
+  padding-top: 1em
+
+.logo
+  display: inline-block
+  width: 56px
+  overflow: hidden
+
+// .personaltools-wrapper
+  // position: absolute
+  // right: 0
+
+.personaltools-wrapper
+  float: right
+  margin-left: 3em
+  a
+    &.personal
+      display: block
+      height: 34px
+      line-height: 34px
+      width: 34px
+      padding: 0
+      text-indent: -2000px
+      overflow: hidden
+      background:
+        image: url('/++theme++coolblue/img/user.png')
+        color: $dark-blue
+      &:hover, &:focus
+        background:
+          image: url('/++theme++coolblue/img/user.png')
+          color: $blue
+
+.searchbox
+  float: right
+  label, input, button
+    display: none
+  input[type=text]
+    display: inline-block
+    +border-radius(1em)
 
 .nav
   +box-shadow(0 10px 10px -10px #888 inset)

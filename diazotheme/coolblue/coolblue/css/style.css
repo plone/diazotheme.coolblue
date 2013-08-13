@@ -3,10 +3,55 @@ body {
   color: #45494d;
 }
 
+/* to header classes so will give the top a 2em padding */
+.header {
+  padding-top: 1em;
+}
+
+.logo {
+  display: inline-block;
+  width: 56px;
+  overflow: hidden;
+}
+
+.personaltools-wrapper {
+  float: right;
+  margin-left: 3em;
+}
+.personaltools-wrapper a.personal {
+  display: block;
+  height: 34px;
+  line-height: 34px;
+  width: 34px;
+  padding: 0;
+  text-indent: -2000px;
+  overflow: hidden;
+  background-image: url("/++theme++coolblue/img/user.png");
+  background-color: #0083be;
+}
+.personaltools-wrapper a.personal:hover, .personaltools-wrapper a.personal:focus {
+  background-image: url("/++theme++coolblue/img/user.png");
+  background-color: #a2c5e0;
+}
+
+.searchbox {
+  float: right;
+}
+.searchbox label, .searchbox input, .searchbox button {
+  display: none;
+}
+.searchbox input[type=text] {
+  display: inline-block;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+}
+
 .nav {
-  -moz-box-shadow: 0 10px 10px -10px #888888 inset;
   -webkit-box-shadow: 0 10px 10px -10px #888888 inset;
-  -o-box-shadow: 0 10px 10px -10px #888888 inset;
+  -moz-box-shadow: 0 10px 10px -10px #888888 inset;
   box-shadow: 0 10px 10px -10px #888888 inset;
   background: #f7f5f2;
   padding: 10px 0;
