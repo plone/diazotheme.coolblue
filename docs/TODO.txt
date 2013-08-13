@@ -1,0 +1,21 @@
+- Checkup on overridden with current Plone 5 branch versions
+  - All current versions were checked on Plone 4.3.1
+  - Log checked up versions to a git checkin number here? Open for better 
+    solutions but while templates still move along separatly...
+    - 
+- Logo as inline SVG for supporting browsers [THijs workin on it]
+  - Added font files, added less files
+  - Check use of font in mockup
+- Icons as icon font (Fontawesome) [THijs workin on it]
+- Finish implementing the Oriols design [THijs workin on it]
+- Move Sass to LESS
+  - Added "LESS Hat" for mixins [THijs]
+  - Convert *.sass to *.scss, rename to *.less and start fixing
+- Responsify the theme (consider mobile first?)
+- Status of ARIA implementation?
+- Cleanup templates and merge into packages when ready for it 
+  - Plone 5 needs to be nearly ready
+  - Coolblue theme needs to be exepted as the new theme
+  - Theming needs to be near final
+  - FWT needs to be okay with the full-on template merge across a lot of 
+    packages 
