@@ -1,0 +1,55 @@
+.icons-on
+  [class*=contenttype-]
+    &:before
+      content: "\f059"
+      content: "\f069"
+      font:
+        family: FontAwesome
+        weight: normal
+        style: normal
+      -webkit-font-smoothing: antialiased
+      margin-right: .3em
+      color: $text-grey
+      display: inline-block
+      width: 1.25em
+    &:hover
+      &:before
+        color: $dark-grey
+        text-decoration: none
+  
+  [class*=contenttype-document]
+    &:before
+      content: "\f0f6"
+  
+  [class*=contenttype-topic], [class*=contenttype-collection] 
+    &:before
+      content: "\f187"
+  
+  [class*=contenttype-event] 
+    &:before
+      content: "\f073"
+  
+  [class*=contenttype-file] 
+    &:before
+      content: "\f016"
+  
+  [class*=contenttype-link] 
+    &:before
+      content: "\f0c1"
+  
+  [class*=contenttype-folder]
+    &:hover, &:active, &.navTreeCurrentNode, &.navTreeItemInPath
+      &:before
+        content: "\f115"
+    &:before
+      content: "\f114"
+  
+  [class*=contenttype-image] 
+    &:before
+      content: "\f03e"
+  
+  /* No news icon, picked book
+  [class*=contenttype-news] 
+    &:before
+      content: "\f02d"
+      content: "\f022"

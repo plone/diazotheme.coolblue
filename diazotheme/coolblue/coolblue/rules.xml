@@ -32,7 +32,115 @@
 
   <!-- Body rules
        ================================================================== -->
-       
+  <!-- Ready for retina -->
+  <replace css:content="#portal-logo img">
+    <svg xmlns="http://www.w3.org/2000/svg"  
+         xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+         version="1.0" id="plone-logo" class="plone-logo"  
+         x="0px" y="0px" width="215px" height="56px"  
+         viewBox="0 0 56 56" enable-background="new 0 0 56 56">
+      <rect width="215" height="56"/>
+      <path d="M28 0C12.537 0 0 12.5 0 28c0.001 15.5 12.5 28 28 28c15.464-0.003 27.998-12.536 28-28 C55.998 12.5 43.5 0 28 0z M43.759 43.759c-4.042 4.038-9.597 6.527-15.76 6.528c-6.164-0.001-11.717-2.492-15.759-6.528 C8.202 39.7 5.7 34.2 5.7 28c0.001-6.163 2.49-11.717 6.528-15.76C16.283 8.2 21.8 5.7 28 5.7 c6.164 0 11.7 2.5 15.8 6.528c4.039 4 6.5 9.6 6.5 15.76C50.286 34.2 47.8 39.7 43.8 43.759z M24.385 9.854c3.346 0 6.1 2.7 6.1 6.059c0 3.347-2.714 6.06-6.06 6.06s-6.059-2.712-6.059-6.06 C18.327 12.6 21 9.9 24.4 9.854z M42.764 28.017c0 3.349-2.711 6.059-6.061 6.059c-3.341 0-6.058-2.711-6.058-6.059 c0-3.348 2.719-6.058 6.058-6.058C40.054 22 42.8 24.7 42.8 28.017z M24.365 34.098c3.347 0 6.1 2.7 6.1 6.1 c0 3.347-2.712 6.06-6.059 6.06c-3.346 0-6.06-2.712-6.06-6.06C18.306 36.8 21 34.1 24.4 34.098z"/>
+      <!--path d="M89.78 32.005h-9.069V47.68h-6.046V7.821h15.114c7.781 0 12.8 5.2 12.8 12.1 C102.54 26.9 97.6 32 89.8 32.005z M89.443 13.252H80.71v13.267h8.732c4.199 0 7.053-2.408 7.053-6.606 C96.496 15.7 93.6 13.3 89.4 13.252z M118.966 47.68v-4.87h-2.519c-2.296 0-3.077-1.119-3.077-3.303V7.821h-5.711v32.022 c0 4.2 2.4 7.8 7.8 7.836H118.966z M144.06 44.655c-1.85 1.905-4.648 3.359-8.511 3.359c-3.861 0-6.605-1.456-8.452-3.359 c-2.686-2.797-3.357-6.382-3.357-11.195c0-4.758 0.671-8.342 3.357-11.141c1.847-1.903 4.591-3.359 8.452-3.359 c3.863 0 6.7 1.5 8.5 3.359c2.686 2.8 3.4 6.4 3.4 11.141C147.418 38.3 146.7 41.9 144.1 44.655z M139.748 25.68c-1.064-1.064-2.519-1.625-4.199-1.625c-1.677 0-3.078 0.559-4.143 1.625c-1.734 1.736-1.957 4.702-1.957 7.8 s0.223 6 2 7.781c1.064 1.1 2.5 1.7 4.1 1.679c1.68 0 3.134-0.616 4.199-1.679c1.737-1.737 1.96-4.703 1.96-7.781 S141.484 27.4 139.7 25.68z M170.048 47.678h5.709V29.541c0-3.191-0.672-5.878-2.854-8.004 c-1.678-1.624-4.086-2.576-6.998-2.576c-2.855 0-5.596 1.063-7.558 3.191v-2.854h-5.595v28.381h5.708V30.382 c0-4.368 2.688-6.327 5.878-6.327c3.189 0 5.7 1.9 5.7 6.327V47.68V47.678z M186.742 35.14c0 4.9 2.6 7.9 7.2 7.9 c3.19 0 4.872-0.894 6.887-2.911l3.638 3.415c-2.911 2.911-5.653 4.422-10.634 4.422c-7.111 0-12.764-3.75-12.764-14.554 c0-9.182 4.758-14.5 12.035-14.5c7.613 0 12 5.6 12 13.661v2.519H186.742z M198.721 27.3 c-0.895-2.126-2.908-3.583-5.597-3.583c-2.686 0-4.758 1.457-5.653 3.583c-0.559 1.288-0.672 2.128-0.729 3.862h12.765 C199.449 29.4 199.3 28.6 198.7 27.302z M212.529 18.518l-0.743-1.486h-0.669v1.486h-0.535v-3.529h1.369 c0.666 0 1.1 0.4 1.1 1.032c0 0.505-0.308 0.828-0.706 0.936l0.815 1.563h-0.625V18.518z M211.908 15.47h-0.791v1.104h0.791 c0.359 0 0.602-0.203 0.602-0.549S212.267 15.5 211.9 15.47z M211.81 13.757c-1.645 0-2.978 1.336-2.978 3 c0.002 1.6 1.3 3 3 2.984c1.651 0 2.99-1.336 2.99-2.984S213.461 13.8 211.8 13.757z M211.81 19.3 c-1.404-0.002-2.541-1.138-2.541-2.546c0.002-1.406 1.136-2.544 2.541-2.547c1.409 0 2.5 1.1 2.6 2.5 C214.358 18.1 213.2 19.3 211.8 19.287z"/-->
+    </svg>
+    <span class="site-title"><xsl:value-of select="./@title"/></span>
+  </replace>
+  <replace css:content=".personal">
+    <a>
+      <xsl:copy-of select="./@*"/>
+      <xsl:value-of select="./text()"/>  <i class="icon-user"></i>
+    </a>
+  </replace>
+
+  <!-- Grid 
+       ========================================================================
+       First used Pure's grid system, but a grid system for plone should have 
+       content reordering. So far I have nog seen a grid system smaller and 
+       as flexible as Deco.gs.
+       ========================================================================
+  
+  <replace css:content=".row">
+    <div class="pure-g">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+
+  <replace css:content=".cell">
+    <xsl:choose>
+      <xsl:when test="@id = 'portal-column-one'">
+        <aside class="pure-u-1-4 aside-one">
+          <xsl:apply-templates select="./*"/>
+        </aside>
+      </xsl:when>
+      <xsl:when test="@id = 'portal-column-two'">
+        <aside class="pure-u-1-4 aside-two">
+          <xsl:apply-templates select="./*"/>
+        </aside>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-1:2')">
+        <div class="pure-u-1-2">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-1:3')">
+        <div class="pure-u-1-3">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-2:3')">
+        <div class="pure-u-2-3">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-1:4')">
+        <div class="pure-u-1-4">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-3:4')">
+        <div class="pure-u-3-4">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-1:5')">
+        <div class="pure-u-1-5">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-2:5')">
+        <div class="pure-u-2-5">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-3:5')">
+        <div class="pure-u-3-5">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-4:5')">
+        <div class="pure-u-4-5">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-1:6')">
+        <div class="pure-u-1-6">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:when test="contains(@class, 'width-5:6')">
+        <div class="pure-u-5-6">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:when>
+      <xsl:otherwise>
+        <div class="pure-u-1">
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:otherwise>
+    </xsl:choose>
+  </replace>
+  -->
+
   <!-- Forms -->
   <replace content="//form">
       <form>
@@ -118,6 +226,7 @@
 
   <replace content="//*[@id='search-filter']//label">
       <label>
+          <xsl:copy-of select="./@for"/>
           <xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
           <xsl:value-of select="."/>
           <xsl:text disable-output-escaping="yes"><![CDATA[&nbsp;]]></xsl:text>
@@ -191,14 +300,14 @@
     </li>
   </replace>
 
-  <replace css:content="#portal-personaltools">
+  <!--replace css:content="#portal-personaltools">
     <div class="pure-menu pure-menu-open pure-menu-horizontal">
       <ul>
         <xsl:copy-of select="@*"/>
         <xsl:apply-templates select="./*"/>
       </ul>
     </div>
-  </replace>
+  </replace-->
 
   <replace css:content="#portal-siteactions">
     <div class="pure-menu pure-menu-open pure-menu-horizontal">
@@ -215,6 +324,9 @@
       </ul>
     </div>
   </replace>
+  
+  <!-- Icons -->
+  <drop css:content=".portaltype-folder dt img, .portaltype-topic dt img, .portaltype-collection dt img, [class*=contenttype-] img"/>
 
   <!-- Edit -->
   <!-- Might not be needed later on. -->
@@ -247,7 +359,7 @@
   <!-- Place the content
        ================================================================== -->
   <merge attributes="class" theme="/html/body" content="/html/body"/>
-  <copy css:theme=".header > div"
+  <copy css:theme=".banner > div"
         css:content="#portal-top"/>
   <copy css:theme=".nav .breadcrumbs"
         css:content="#portal-breadcrumbs>*"/>

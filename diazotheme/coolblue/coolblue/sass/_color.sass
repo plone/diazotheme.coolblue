@@ -1,13 +1,116 @@
 /* =Colors
+body 
+  color: #45494d
+
 a
   +link-colors($link-blue)
   +hover-link
 
-.header
+.banner
   a
-    +link-colors($link-blue)
+    +link-colors($grey, $dark-grey)
+  li
+    a
+      &:hover, &:focus
+        background:
+          color: $white
+
+.personal
+  i
+    background:
+      color: $dark-blue
+    color: $white
+  &:hover i, .activated & i
+    background:
+      color: $blue
+
+.actionMenuContent, .LSResult
+  background: 
+    color: $light-blue
+  +box-shadow(0 .1em .3em $grey)
+  color: $dark-blue
+
+.LSResult
+  color: $dark-grey
+  legend
+    background:
+      color: $blue
+    color: $white
+  a
+    +link-colors($dark-blue)
+  ul
+    border:
+      bottom: 1px solid $white
+  li
+    border:
+      top: 1px solid $white
+      bottom: 1px solid $blue
+    &:first-child
+      border:
+        top: 0
+
+.actionMenuContent
+  a
+    +link-colors($dark-blue, $white)
+  li
+    a:hover
+      background: 
+        color: $dark-blue
 
 .footer
   color: $text-grey
   a
     +link-colors($light-grey)
+  li
+    a
+      &:hover, &:focus
+        background:
+          color: $text-grey
+
+
+a, i
+  +transition()
+
+// =Svgs
+.logo
+  margin: 0
+  height: 56px
+  svg
+    float: left
+    width: 56px
+    height: 56px
+    padding-right: 20px
+  &, rect, path, svg, .site-title
+    +transition()
+  rect, path + path
+    fill: $white
+  path
+    fill: $dark-blue
+  .svg &:hover
+    path 
+      fill: $blue
+    path + path
+      fill: $dark-grey
+  //  margin: -2.5px 0 -2.5px -5px
+    height: 61px
+    svg
+      width: 61px
+      height: 61px
+  .site-title
+    font-size: 46px
+    line-height: 56px
+  &:hover
+    text-decoration: none
+  //  .site-title
+      font-size: 51px
+      line-height: 61px
+
+
+.no-svg
+  .logo
+    &, &:hover
+      width: 215px
+      height: 56px
+      background:
+        image: url('/++theme++coolblue/img/logo.png')
+  

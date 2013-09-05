@@ -1,40 +1,168 @@
-/* =Layout */
-body {
-  color: #45494d;
+div.row {
+  float: left;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+div.cell {
+  position: relative;
+  float: left;
+  left: 100%;
 }
 
-/* to header classes so will give the top a 2em padding */
-.header {
-  padding-top: 1em;
+/* Convenience classes — ¼, ½, ¾ widths and ¼, ½, ¾ positions.
+ * Not strictly necessary. */
+div {
+  /* Special classes for ⅓, ⅔ widths and ⅓, ⅔ positions.
+   * These do not strictly conform to the grid, but are useful for certain 
+   * layouts. */
+  /* Full/leftmost are useful synonyms for full width and leftmost positioning */
+}
+div.width-1\3a 2  {
+  /* .width-1:2 */
+  width: 47.916%;
+}
+div.width-1\3a 4  {
+  /* .width-1:4 */
+  width: 22.916%;
+}
+div.width-3\3a 4 {
+  /* .width-3:4 */
+  width: 72.916%;
+}
+div.position-1\3a 4  {
+  /* .position-1:4 */
+  margin-left: -75.001%;
+}
+div.position-1\3a 2  {
+  /* .position-1:2 */
+  margin-left: -50.002%;
+}
+div.position-3\3a 4 {
+  /* .position-3:4 */
+  margin-left: -25.003%;
+}
+div.width-1\3a 3 {
+  /* .width-1:3 */
+  width: 31.25%;
+}
+div.width-2\3a 3 {
+  /* .width-2:3 */
+  width: 64.583%;
+}
+div.position-1\3a 3 {
+  /* .position-1:3 */
+  margin-left: -66.668%;
+}
+div.position-2\3a 3 {
+  /* .position-2:3 */
+  margin-left: -33.336%;
+}
+div.position-leftmost, div.position-0 {
+  margin-left: -100%;
+}
+div.width-full {
+  width: 97.917%;
+}
+
+/* =Layout */
+.block {
+  margin: 0 auto;
+  width: 960px;
+  position: relative;
+}
+
+.clearfix:after, .searchResultsBar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.banner > .block {
+  padding: 2em 0;
 }
 
 .logo {
   display: inline-block;
-  width: 56px;
   overflow: hidden;
+  float: left;
+}
+
+.personal i {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  width: 34px;
+  margin-left: 20px;
 }
 
 .personaltools-wrapper {
   float: right;
   margin-left: 3em;
 }
-.personaltools-wrapper a.personal {
-  display: block;
-  height: 34px;
-  line-height: 34px;
-  width: 34px;
-  padding: 0;
-  text-indent: -2000px;
-  overflow: hidden;
-  background-image: url("/++theme++coolblue/img/user.png");
-  background-color: #0083be;
+.personaltools-wrapper a:focus {
+  outline: none;
 }
-.personaltools-wrapper a.personal:hover, .personaltools-wrapper a.personal:focus {
-  background-image: url("/++theme++coolblue/img/user.png");
-  background-color: #a2c5e0;
+.personaltools-wrapper a.personal {
+  border: 0;
+  padding: 0;
+}
+
+.actionMenu {
+  margin: 0;
+}
+.actionMenu li {
+  list-style: none;
+}
+
+.actionMenuContent {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  margin-top: 0.25em;
+  padding: 0.5em;
+}
+.actionMenuContent, .actionMenuContent a {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.actionMenuContent a {
+  display: block;
+  padding: 0.25em 0.5em;
+}
+.actionMenuContent ul {
+  margin: 0;
+  padding: 0;
+}
+
+.activated .actionMenuContent {
+  display: block;
+}
+
+.navigation, nav {
+  clear: right;
+  float: right;
+  margin-top: 0.5em;
+}
+.navigation li a, nav li a {
+  padding: 0;
+  margin-left: 40px;
+}
+.navigation li:first-child a, nav li:first-child a {
+  margin-left: 0;
 }
 
 .searchbox {
+  padding: 5px 0;
   float: right;
 }
 .searchbox label, .searchbox input, .searchbox button {
@@ -49,6 +177,30 @@ body {
   border-radius: 1em;
 }
 
+.LSResult {
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  display: none;
+  margin-top: 0.25em;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+  z-index: 4;
+}
+.LSResult legend {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.LSResult ul {
+  margin: 1em 0 0;
+  padding: 0;
+}
+.LSResult li {
+  padding: 0.5em;
+}
+
 .nav {
   -webkit-box-shadow: 0 10px 10px -10px #888888 inset;
   -moz-box-shadow: 0 10px 10px -10px #888888 inset;
@@ -57,10 +209,21 @@ body {
   padding: 10px 0;
 }
 
+.main {
+  padding: 35px 0 50px;
+}
+
 .footer {
   background: #2e3133;
   color: #777e83;
-  padding: 50px 0;
+  padding: 15px 0;
+}
+.footer.container {
+  padding-bottom: 85px;
+}
+.footer p {
+  padding: 35px 0;
+  border-bottom: 1px solid #45494d;
 }
 .footer .pure-menu {
   background: transparent;
@@ -72,9 +235,16 @@ body {
   color: white;
 }
 
-.block {
-  margin: 0 auto;
-  width: 960px;
+/* Specific pages */
+/* Search */
+.searchResultsBar {
+  text-align: right;
+}
+.searchResultsBar > span:first-child, .searchResultsBar > dl {
+  float: left;
+}
+.searchResultsBar .actionMenuHeader {
+  margin-left: 0.5em;
 }
 
 /* =Typography */
@@ -82,7 +252,35 @@ body {
   line-height: 1.618;
 }
 
+nav, .documentDescription {
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6, nav, .documentDescription, .site-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.banner a:hover {
+  text-decoration: none;
+}
+
+.LSResult legend {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+.footer li a:hover, .footer li a:focus {
+  text-decoration: none;
+}
+
 /* =Colors */
+body {
+  color: #45494d;
+}
+
 a {
   color: #0099ff;
   text-decoration: none;
@@ -91,8 +289,61 @@ a:hover {
   text-decoration: underline;
 }
 
-.header a {
-  color: #0099ff;
+.banner a {
+  color: #999999;
+}
+.banner a:hover {
+  color: #45494d;
+}
+.banner li a:hover, .banner li a:focus {
+  background-color: white;
+}
+
+.personal i {
+  background-color: #0083be;
+  color: white;
+}
+.personal:hover i, .activated .personal i {
+  background-color: #a2c5e0;
+}
+
+.actionMenuContent, .LSResult {
+  background-color: #f1f6fa;
+  -webkit-box-shadow: 0 0.1em 0.3em #999999;
+  -moz-box-shadow: 0 0.1em 0.3em #999999;
+  box-shadow: 0 0.1em 0.3em #999999;
+  color: #0083be;
+}
+
+.LSResult {
+  color: #45494d;
+}
+.LSResult legend {
+  background-color: #a2c5e0;
+  color: white;
+}
+.LSResult a {
+  color: #0083be;
+}
+.LSResult ul {
+  border-bottom: 1px solid white;
+}
+.LSResult li {
+  border-top: 1px solid white;
+  border-bottom: 1px solid #a2c5e0;
+}
+.LSResult li:first-child {
+  border-top: 0;
+}
+
+.actionMenuContent a {
+  color: #0083be;
+}
+.actionMenuContent a:hover {
+  color: white;
+}
+.actionMenuContent li a:hover {
+  background-color: #0083be;
 }
 
 .footer {
@@ -100,6 +351,58 @@ a:hover {
 }
 .footer a {
   color: #f7f2f2;
+}
+.footer li a:hover, .footer li a:focus {
+  background-color: #777e83;
+}
+
+a, i {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.logo {
+  margin: 0;
+  height: 56px;
+}
+.logo svg {
+  float: left;
+  width: 56px;
+  height: 56px;
+  padding-right: 20px;
+}
+.logo, .logo rect, .logo path, .logo svg, .logo .site-title {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.logo rect, .logo path + path {
+  fill: white;
+}
+.logo path {
+  fill: #0083be;
+}
+.svg .logo:hover path {
+  fill: #a2c5e0;
+}
+.svg .logo:hover path + path {
+  fill: #45494d;
+}
+.logo .site-title {
+  font-size: 46px;
+  line-height: 56px;
+}
+.logo:hover {
+  text-decoration: none;
+}
+
+.no-svg .logo, .no-svg .logo:hover {
+  width: 215px;
+  height: 56px;
+  background-image: url("/++theme++coolblue/img/logo.png");
 }
 
 /* =Plone */
@@ -112,4 +415,149 @@ a:hover {
   overflow: hidden;
   padding: 0;
   width: 0.1em;
+}
+
+.portletItem, .portletFooter {
+  margin-left: 0;
+}
+
+.navTree {
+  margin: 0;
+  padding-left: 0;
+}
+.navTree li a {
+  margin-left: 0;
+}
+
+.navTreeLevel0 ul {
+  padding-left: 0.5em;
+}
+
+.icons-on {
+  /* No news icon, picked book */
+}
+.icons-on [class*=contenttype-]:before {
+  content: "\f059";
+  content: "\f069";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.3em;
+  color: #777e83;
+  display: inline-block;
+  width: 1.25em;
+}
+.icons-on [class*=contenttype-]:hover:before {
+  color: #45494d;
+  text-decoration: none;
+}
+.icons-on [class*=contenttype-document]:before {
+  content: "\f0f6";
+}
+.icons-on [class*=contenttype-topic]:before, .icons-on [class*=contenttype-collection]:before {
+  content: "\f187";
+}
+.icons-on [class*=contenttype-event]:before {
+  content: "\f073";
+}
+.icons-on [class*=contenttype-file]:before {
+  content: "\f016";
+}
+.icons-on [class*=contenttype-link]:before {
+  content: "\f0c1";
+}
+.icons-on [class*=contenttype-folder]:hover:before, .icons-on [class*=contenttype-folder]:active:before, .icons-on [class*=contenttype-folder].navTreeCurrentNode:before, .icons-on [class*=contenttype-folder].navTreeItemInPath:before {
+  content: "\f115";
+}
+.icons-on [class*=contenttype-folder]:before {
+  content: "\f114";
+}
+.icons-on [class*=contenttype-image]:before {
+  content: "\f03e";
+}
+.icons-on [class*=contenttype-news]:before {
+  content: "\f02d";
+  content: "\f022";
+}
+
+/* styling for overlays (popups) */
+div.overlay {
+  width: auto;
+  height: auto;
+  /* initially overlay is hidden */
+  display: none;
+  /* some padding to layout nested elements nicely  */
+  margin: 1em;
+}
+
+div.overlay-iframe,
+div.overlay-ajax {
+  width: 60%;
+  min-height: 100px;
+  z-index: 99;
+}
+
+div.overlay-iframe {
+  height: 60%;
+}
+
+/* default close button positioned on upper-left corner */
+div.overlaybg div.close,
+div.overlay div.close {
+  background-image: url("pb_close.png");
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.pb-ajax {
+  overflow-y: auto;
+}
+
+.pb-ajax, .pb-image {
+  white-space: normal;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 0 1em #888888;
+  -moz-box-shadow: 0 0 1em #888888;
+  box-shadow: 0 0 1em #888888;
+}
+
+.pb-ajax > * {
+  padding: 1em;
+  background-color: #f1f6fa;
+  white-space: normal;
+}
+
+.pb-ajax .documentActions {
+  display: none;
+}
+
+div.overlay div.close span {
+  display: block;
+  height: 1px;
+  margin: -1px 0 0 -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+}
+
+/* Hide form elements that don't make sense within an overlay. */
+div.overlay .link-parent {
+  display: none;
+}
+
+div.overlay #createGroup legend {
+  display: none;
+}
+
+div.overlay #createGroup fieldset {
+  border: none;
 }

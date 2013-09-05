@@ -40,7 +40,7 @@
         <input type="hidden" name="advanced_search" value="False" />
         <input type="hidden" name="sort_on" value="" />
 
-        <fieldset id="search-field" i18n:domain="plone" class="noborder">
+        <fieldset id="search-field" class="searchField" i18n:domain="plone" class="noborder">
             <input class="searchPage"
                    name="SearchableText"
                    type="text"
@@ -84,13 +84,13 @@
             </a>
         </p>
 
-        <div id="search-results-wrapper"
+        <div id="search-results-wrapper" class="searchResultsWrapper"
              tal:define="b_start python:0;
                          b_start request/b_start | b_start;
                          batch python: view.results(b_start=b_start);
                          normalizeString nocall:context/@@plone/normalizeString;">
 
-            <div id="search-results-bar">
+            <div id="search-results-bar" class="searchResultsBar">
                 <span i18n:translate="batch_x_items_matching_your_criteria" i18n:domain="plone">
                     <strong i18n:name="number" id="search-results-number"
                             tal:content="batch/sequence_length|string:0">234</strong>
@@ -228,9 +228,9 @@
 
                 </dl>
 
-                <span id="searchResultsSort">
+                <span id="searchResultsSort" class="searchResultsSort">
                   <span i18n:translate="sort_by">Sort by</span>
-                      <span id="sorting-options">
+                      <span id="sorting-options" class="sortingOptions">
                           <metal:sorting define-macro="sorting">
                               <tal:block repeat="item view/sort_options">
                                   <tal:item define="selected item/selected">
@@ -249,7 +249,7 @@
             </div>
 
             <metal:searchresults define-macro="search_results">
-                <div id="search-results"
+                <div id="search-results" class="searchResults"
                      tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;">
 
                     <metal:noresults tal:condition="not: batch">

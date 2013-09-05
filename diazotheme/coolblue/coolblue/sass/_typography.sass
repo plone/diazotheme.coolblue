@@ -2,3 +2,40 @@
 body
   line-height: 1.618
 
+nav, .documentDescription
+  text-transform: uppercase
+
+#{headings()}, nav, .documentDescription, .site-title
+  font-family: "Open Sans", sans-serif
+  font-weight: 600
+
+// #{headings()}
+  // font-weight: 600
+// nav
+  // font-weight: 400
+// .documentDescription
+  // font-weight: 300
+
+// .documentDescription
+  // font-size: 
+
+.banner 
+  a
+    &:hover
+      text-decoration: none
+
+.LSResult
+  legend
+    text-align: center
+
+// .actionMenuContent, .LSResult
+  // a
+    // &:hover
+      // text-decoration: none
+
+.footer
+  text-align: center
+  li
+    a
+      &:hover, &:focus
+        text-decoration: none

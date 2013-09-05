@@ -1,42 +1,98 @@
 /* =Layout
+.block
+  margin: 0 auto
+  width: 960px
+  position: relative
 
-body 
-  color: #45494d
+.clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
 
-/* to header classes so will give the top a 2em padding
-.header
-  padding-top: 1em
+.banner > .block
+  padding: 2em 0
 
 .logo
   display: inline-block
-  width: 56px
   overflow: hidden
+  float: left
 
-// .personaltools-wrapper
-  // position: absolute
-  // right: 0
+.personal
+  i
+    +border-radius(50%)
+    display: inline-block
+    height: 34px
+    line-height: 34px
+    text-align: center
+    width: 34px
+    margin-left: 20px    
 
 .personaltools-wrapper
   float: right
   margin-left: 3em
   a
+    &:focus
+      outline: none
     &.personal
-      display: block
-      height: 34px
-      line-height: 34px
-      width: 34px
+      border: 0
       padding: 0
-      text-indent: -2000px
-      overflow: hidden
-      background:
-        image: url('/++theme++coolblue/img/user.png')
-        color: $dark-blue
-      &:hover, &:focus
-        background:
-          image: url('/++theme++coolblue/img/user.png')
-          color: $blue
+      // display: block
+      // height: 34px
+      // line-height: 34px
+      // width: 34px
+      // text-indent: -2000px
+      // overflow: hidden
+      // background:
+        // image: url('/++theme++coolblue/img/user.png')
+        // color: $dark-blue
+      // &:hover, &:focus
+        // background:
+          // image: url('/++theme++coolblue/img/user.png')
+          // color: $blue
+
+.actionMenu
+  margin: 0
+  li
+    list-style: none
+
+.actionMenuContent
+  display: none
+  position: absolute
+  z-index: 3
+  margin:
+    top: .25em
+  padding: .5em
+  &, a
+    +border-radius(.5em)
+  a
+    display: block
+    padding: .25em .5em
+  ul
+    margin: 0
+    padding: 0
+  
+.activated
+  .actionMenuContent
+    display: block
+    
+.navigation, nav
+  clear: right
+  float: right
+  margin:
+    top: .5em
+  li
+    a
+      padding: 0
+      margin:
+        left: 40px
+    &:first-child
+      a
+        margin: 
+          left: 0 
 
 .searchbox
+  padding: 5px 0
   float: right
   label, input, button
     display: none
@@ -44,15 +100,41 @@ body
     display: inline-block
     +border-radius(1em)
 
+.LSResult
+  border-radius: 0.5em 0.5em 0.5em 0.5em
+  display: none
+  margin-top: 0.25em
+  padding: 0.5em
+  position: absolute
+  right: 0
+  z-index: 4
+  legend
+    +border-radius(.5em)
+  ul
+    margin: 1em 0 0
+    padding: 0
+  li
+    padding: .5em
+
 .nav
   +box-shadow(0 10px 10px -10px #888 inset)
   background: #f7f5f2 
   padding: 10px 0
 
+.main
+  padding: 35px 0 50px
+
 .footer 
   background: #2e3133
-  color: #777e83  
-  padding: 50px 0
+  color: #777e83
+  padding: 15px 0
+  &.container
+    padding: 
+      bottom: 85px
+  p
+    padding: 35px 0
+    border: 
+      bottom: 1px solid $dark-grey 
   .pure-menu
     background: transparent
     a
@@ -60,6 +142,13 @@ body
       &:hover 
         color: #fff
 
-.block
-  margin: 0 auto
-  width: 960px
+/* Specific pages
+/* Search
+.searchResultsBar
+  @extend .clearfix
+  text-align: right
+  > span:first-child, > dl
+    float: left
+  .actionMenuHeader
+    margin-left: .5em
+
